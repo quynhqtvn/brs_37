@@ -1,3 +1,5 @@
+!bin/
+Bin/
 *.rbc
 *.sassc
 .sass-cache
