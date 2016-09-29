@@ -21,3 +21,24 @@
 
 en:
   hello: "Hello world"
+  home: "Home"
+  about: "About"
+  users: "Users"
+  faq: "Faq"
+  contact: "Contact"
+  logo: "Company Logo"
+  profile: "Profile"
+  settings: "Settings"
+  help: "Help"
+  bookreview: "Book Review"
+  add: "21 Hung Vuong Street"
+  add2: " Da Nang, Viet Nam"
+  phone: "+84 000 123456"
+  about: "About us"
+  company: "Book Review &copy; 2016"
+  logout: "Log out"
+  lorem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  Vestibulum feugiat, augue in scelerisque fermentum, "
+  acc: "Account"
+  tit: "Static Pages"
+  
