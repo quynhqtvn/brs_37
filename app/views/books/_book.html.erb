@@ -1,0 +1,37 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-12" id="post">
+      <div class="row">
+        <div class="col-md-12">
+          <% @books.each do |book| %>
+            <h4>
+              <strong><%= book.title %></strong>
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12" id="post-header-line">
+            <span class="glyphicon glyphicon-book"></span> <%= book.category.name %> |
+            <span class="glyphicon glyphicon-calendar"></span><%= l book.created_at, format: :short %> |
+            <span class="glyphicon glyphicon-comment"></span><%= t "comments" %> |
+            <i class="glyphicon glyphicon-heart"></i><%= t "favorite" %>|
+            <span class="glyphicon glyphicon-tags"></span><%= t "tags" %> :
+          </div>
+        </div>
+        <div class="row" id="post-content">
+          <div class="col-md-3">
+            <img src="http://4.bp.blogspot.com/-_lqoNpVXeU4/UkxQ7N-QW8I/AAAAAAAACTw/pni-TZyp17o/s1600/cool+share+button+effects+styles.png" alt="" class="img-responsive">
+          </div>
+          <div class="col-md-9">
+            <p>
+              <%= book.description %>
+            </p>
+            <p>
+              <%= link_to t("readmore"), "#", class: "btn btn-read-more", id: "btn-read-more" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
