@@ -1,10 +1,28 @@
 <div class="container">
-  <h1><%= t "tit" %></h1>
-  <p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere quam turpis, in luctus nunc sagittis quis. Nunc non augue vel dui laoreet fermentum in et urna. Praesent ut urna in felis rutrum tempor sit amet eget est. Nulla ipsum magna, blandit vel sodales in, dignissim vel orci. Ut varius justo sit amet vehicula facilisis. Donec sagittis purus quis nunc volutpat, in auctor arcu euismod. Nam pretium ex libero.
-  Ut sollicitudin, tellus quis elementum dapibus, enim elit dictum nisi, et euismod mi lorem ut dui. Quisque ac eros lorem. Sed vitae nisl aliquam ante imperdiet varius. Aliquam et ultrices mi, et mollis quam. Etiam varius, nunc sit amet suscipit semper, velit est sodales eros, sed malesuada velit erat ut enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam facilisis, justo vitae facilisis interdum, arcu risus fringilla risus, et dapibus nulla nunc sed risus. Aenean aliquam tincidunt risus, non vestibulum arcu pellentesque id. Integer turpis orci, viverra ut justo sed, efficitur condimentum lectus. Nullam euismod mattis quam ac vehicula. Donec erat arcu, semper non neque a, scelerisque posuere ex. Sed ac sem semper, faucibus est a, sodales erat. Sed vel consequat mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-  In et laoreet sem. Vestibulum quam ipsum, scelerisque eget auctor eu, lacinia ac mi. In viverra convallis eleifend. Ut eu ex sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam in metus tellus. Aliquam commodo lectus diam, ac semper orci accumsan at. Fusce elementum leo quis lacus porta, imperdiet porta odio hendrerit. Vestibulum sollicitudin hendrerit orci a feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ultrices accumsan risus. Proin eu vehicula nibh.
-  Aliquam varius laoreet felis. Sed sed bibendum tortor. Pellentesque sagittis dictum laoreet. Etiam dictum pulvinar efficitur. Nunc placerat lobortis velit, quis gravida magna. Praesent consectetur nisi ac efficitur accumsan. Aenean iaculis, enim eu suscipit eleifend, urna nulla consequat sem, eu egestas odio urna eu ligula. Sed a turpis aliquam, iaculis justo ac, varius diam. Fusce hendrerit volutpat sollicitudin. Maecenas justo tortor, varius id vulputate cursus, aliquam et tortor. Morbi non diam et elit gravida efficitur et at nibh. Fusce vitae mi justo.
-  Quisque ut facilisis metus. Sed malesuada ligula suscipit dolor consectetur laoreet. Ut placerat nibh dolor, nec porttitor purus luctus non. Pellentesque efficitur, eros ac lacinia dictum, nibh elit rhoncus risus, vitae condimentum ante ipsum posuere sem. Vivamus nec sagittis arcu. Suspendisse ut ultrices leo. Quisque est metus, facilisis a pharetra sed, ultrices eget sem. Nam felis erat, eleifend quis tortor eget, suscipit elementum lorem. Sed quis vulputate mauris. Vestibulum tempus eu sapien sit amet interdum. Nulla sit amet volutpat erat. Fusce vulputate quam condimentum tortor interdum pharetra. Donec eu nibh arcu. Nam justo odio, feugiat in elementum eu, molestie et orci. Aliquam dictum, erat at pulvinar semper, mi ligula volutpat elit, fermentum ultricies purus quam vel tellus. 
-  </p>
+  <div class="row">
+    <div class="col-md-9">
+      <h1><%= t "title" %></h1>
+      <hr id="hr1">
+      <hr id="hr2">
+      <h4><%= t "title_book" %></h4>
+      <p><%= t "content" %></p>
+    <div class="box-border">
+      <p id="tags"><%= t "tags" %>
+      </p>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" id ="dropdown-toggle" type="button"
+          id="menu1"data-toggle="dropdown"><%= t "category" %><span id="caret1" class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" id="dropdown" role="menu">
+        <% @categories.each do |category| %>
+          <li class="<%= 'active' if params[:category] == category.name %>">
+            <%= link_to category.name, root_path(category: category.name), class: "link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <%= render "books/book" %>
+    </div>
+  </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929022240) do
+ActiveRecord::Schema.define(version: 20160930025845) do
 
   create_table "book_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "book_id"
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(version: 20160929022240) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.string   "password_degist"
-    t.string   "remember_degist"
+    t.string   "password_digest"
+    t.string   "remember_digest"
     t.string   "email"
     t.string   "image"
     t.boolean  "admin"

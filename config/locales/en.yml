@@ -26,3 +26,18 @@ en:
   alert: "The form contains"
   error: "error"
   register: "Register successfull!"
+  title: "Books"
+  title_book: "Read Free Books Online and Download eBooks for Free"
+  content: "Find thousands of books to read online and download free eBooks.
+    Discover and read free books by indie authors as well as tons of classic books.
+    Browse categories to find your favorite literature genres: Romance, Fantasy, T
+    hriller, Short Stories, Young Adult and Children’s Books… There are eBooks for everyone."
+  tags: "Tags: "
+  category: "Categories"
+  comments: "Comments"
+  favorite: "Favorite"
+  readmore: "Read more"
+  time:
+    formats:
+      short: "%B, %d %Y %H:%M:%S"
+  category_nil: "category couldn't be found"

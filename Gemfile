@@ -1,3 +1,4 @@
+source "https://rubygems.org"
 
 gem "rails", "~> 5.0.0"
 gem "bcrypt", "~>3.1.7"
@@ -18,6 +19,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "pry"
   gem "web-console"
   gem "listen", "~> 3.0.5"
   gem "spring"

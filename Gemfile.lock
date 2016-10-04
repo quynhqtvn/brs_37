@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     actioncable (5.0.0.1)
       actionpack (= 5.0.0.1)
@@ -41,6 +42,7 @@ GEM
     autoprefixer-rails (6.4.1.1)
       execjs
     bcrypt (3.1.11)
+    bcrypt (3.1.11-x64-mingw32)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -48,6 +50,7 @@ GEM
       will_paginate
     builder (3.2.2)
     byebug (9.0.5)
+    coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -60,6 +63,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    ffi (1.9.14-x64-mingw32)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -85,11 +89,19 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     mysql2 (0.4.4)
+    mysql2 (0.4.4-x64-mingw32)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    nokogiri (1.6.8-x64-mingw32)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     pkg-config (1.1.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -128,6 +140,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -147,6 +160,8 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2016.7)
+      tzinfo (>= 1.0.0)
     uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
     web-console (3.3.1)
@@ -161,6 +176,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -172,6 +188,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
+  pry
   puma (~> 3.0)
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
