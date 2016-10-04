@@ -41,3 +41,7 @@ en:
     formats:
       short: "%B, %d %Y %H:%M:%S"
   category_nil: "category couldn't be found"
+  book_nil: "Book counldn't be found"
+  by: "By: "
+  readbook: "Read book"
+  write_review: "Write Review"

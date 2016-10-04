@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <% @books.each do |book| %>
             <h4>
-              <strong><%= book.title %></strong>
+              <strong><%= link_to book.title, book_path(book.id) %></strong>
             </h4>
           </div>
         </div>
@@ -27,11 +27,11 @@
               <%= book.description %>
             </p>
             <p>
-              <%= link_to t("readmore"), "#", class: "btn btn-read-more", id: "btn-read-more" %>
+              <%= link_to t("readmore"), book_path(book.id) , class: "btn btn-read-more", id: "btn-read-more" %>
             </p>
           </div>
         </div>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>

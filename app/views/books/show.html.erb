@@ -1,0 +1,35 @@
+<div>
+  <h2>
+    <strong><%= @book.title %></strong>
+  </h2>
+  <h3>
+    <strong><%= t "by" %><%= @book.author %></strong>
+  </h3>
+  <div class="col-md-4" id="col-md-4">
+    <img src="http://4.bp.blogspot.com/-_lqoNpVXeU4/UkxQ7N-QW8I/AAAAAAAACTw/pni-TZyp17o/s1600/cool+share+button+effects+styles.png" alt="" class="img-responsive" id="img-book">
+  </div>
+  <div class="col-md-8" id = "col-md-8">
+    <p>
+      <%= @book.description %>
+    </p>
+    <div>
+      <%= link_to t("readbook"), "#", class: "btn btn-primary", type: "button", id: "button-read" %>
+    </div>
+    <div>
+      <%= link_to t("write_review"), "#", class: "btn btn-primary", type: "button", id: "button-review" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" id="post">
+      <div class="row">
+        <div class="col-md-12" id="post-header-line">
+          <span class="glyphicon glyphicon-book"></span> <%= @category_name %> |
+          <span class="glyphicon glyphicon-calendar"></span><%= l @book.created_at,format: :short %> |
+          <span class="glyphicon glyphicon-comment"></span><%= t "comments" %> |
+          <i class="glyphicon glyphicon-heart"></i><%= t "favorite" %>|
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
