@@ -8,6 +8,9 @@
       <p><%= t "content" %></p>
     <div class="box-border">
       <p id="tags"><%= t "tags" %>
+        <% @tags.each do |tag| %>
+          <%= link_to tag.name, root_path(tag: tag.name) %>
+        <% end %>
       </p>
     </div>
     <div class="dropdown">

@@ -16,6 +16,9 @@
             <span class="glyphicon glyphicon-comment"></span><%= t "comments" %> |
             <i class="glyphicon glyphicon-heart"></i><%= t "favorite" %>|
             <span class="glyphicon glyphicon-tags"></span><%= t "tags" %> :
+            <% book.tags.each do |tag| %>
+              <%= link_to tag.name, root_path(tag: tag.name) %>
+            <% end %>
           </div>
         </div>
         <div class="row" id="post-content">
@@ -31,6 +34,7 @@
             </p>
           </div>
         </div>
+        <%= will_paginate @books %>
         <% end %>
     </div>
   </div>
