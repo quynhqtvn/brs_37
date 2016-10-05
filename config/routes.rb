@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root "static_pages#index"
-  resources :users
-  resources :books
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
   get "/login", to: "sessions#new"
@@ -11,6 +9,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root "categories#index", as: "root"
     resources :users, only: :delete
-    resources :categories, only: [:new, :create]
+    resources :categories
   end
+
+  resources :users
+  resources :books
 end
