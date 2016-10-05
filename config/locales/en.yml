@@ -53,3 +53,6 @@ en:
   please_login: "Please login!"
   new_user: "New user?"
   user_not_found: "User could not be found!"
+  profile_updated: "Profile updated!"
+  update_profile: "Update your profile"
+  save: "Save changes"
