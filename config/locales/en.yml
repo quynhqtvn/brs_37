@@ -40,8 +40,7 @@ en:
   time:
     formats:
       short: "%B, %d %Y %H:%M:%S"
-  category_nil: "category couldn't be found"
-  book_nil: "Book counldn't be found"
+  found_nil: "Counldn't be found"
   by: "By: "
   readbook: "Read book"
   write_review: "Write Review"
@@ -56,3 +55,4 @@ en:
   profile_updated: "Profile updated!"
   update_profile: "Update your profile"
   save: "Save changes"
+  tag_nil: "Tag counldn't be found"

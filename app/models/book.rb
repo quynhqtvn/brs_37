@@ -9,5 +9,4 @@ class Book < ApplicationRecord
   has_many :book_tags
   has_many :tags, through: :book_tags
 
-  scope :of_category, -> category_id {where category_id: category_id if category_id.present?}
 end
