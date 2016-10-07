@@ -3,6 +3,7 @@ class BooksController < ApplicationController
 
   def show
     @category_name = @book.category.name
+    @build_review =  @book.reviews.build
   end
 
   private

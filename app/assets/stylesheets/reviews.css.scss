@@ -1,0 +1,77 @@
+#col-md-9 {
+  margin-top: 100px;
+}
+
+#col-md-9-a {
+  width: 100%;
+}
+
+#col-sm-9 {
+  margin-top: -115px;
+  margin-left: 230px;
+}
+
+.rating {
+  float: left;
+}
+
+.rating:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  width: 25px;
+  padding: 0 .16px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  line-height: 1.2;
+  color: #ddd;
+  text-shadow: 1px 1px #bbb, 2px 2px #666, .16px .16px .32px rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.rating > input:checked ~ label {
+  color: #f70;
+  text-shadow: 1px 1px #c60, 2px 2px #940, .16px .16px .32px rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .16px .16px .32px rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #ea0;
+  text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .16px .16px .32px rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+#reviews-row {
+  margin-top: 40px;
+}
+
+#post-review-box {
+  display: none;
+}
+
+#new-title {
+  width: 628px;
+}

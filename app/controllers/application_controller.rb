@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def verify_admin
-    redirect_to root_path unless  current_user && current_user.admin?
+    redirect_to root_path unless current_user && current_user.admin?
   end
 
   def logged_in_user

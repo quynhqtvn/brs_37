@@ -15,9 +15,6 @@
     <div>
       <%= link_to t("readbook"), "#", class: "btn btn-primary", type: "button", id: "button-read" %>
     </div>
-    <div>
-      <%= link_to t("write_review"), "#", class: "btn btn-primary", type: "button", id: "button-review" %>
-    </div>
   </div>
   <div class="row">
     <div class="col-md-12" id="post">
@@ -31,5 +28,5 @@
       </div>
     </div>
   </div>
+  <%= render "reviews/form" %>
 </div>
-

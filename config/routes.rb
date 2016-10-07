@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root "static_pages#index"
+
+  resources :users
+  resources :books do
+    resources :reviews, only: [:show, :new, :create]
+  end
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
   get "/login", to: "sessions#new"
