@@ -1,8 +1,28 @@
 <div id="content">
-  <h2><%= t "welcome_cms" %></h2>
-  <div>
-    <p>
-      <%= t "content" %>
-    </p>
-  </div>
+  <h2><%= t "manage_categories" %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t "categories" %></th>
+        <th><%= t "category.edit" %></th>
+        <th><%= t "category.delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td>
+            <%= link_to t("edit"), edit_admin_category_path(category),
+              class: "edit" %>
+          </td>
+          <td>
+            <%= link_to t("category.delete"), admin_category_path(category),
+              method: :delete, data: {confirm: t("confirm_delete")},
+              class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
