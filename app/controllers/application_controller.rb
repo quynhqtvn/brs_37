@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
+  def load_book
+    @book = Book.find_by id: params[:id]
+    if @book.nil?
+      flash[:notice] = t "book.not_found"
+      redirect_to admin_root_path
+    end
+  end
 end

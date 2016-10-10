@@ -51,7 +51,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def load_category
-    @category = Category.find_by params[:id]
+    @category = Category.find_by id: params[:id]
     if @category.nil?
       flash[:notice] = t "category.not_found"
       redirect_to admin_root_path

@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     root "categories#index", as: "root"
     resources :users, only: :delete
     resources :categories
+    resources :books
   end
 
   resources :users
-  resources :books
+  resources :books, only: :show
 end

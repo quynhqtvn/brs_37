@@ -1,0 +1,36 @@
+<%= form_for [:admin, @book], html: {multipart: true} do |f| %>
+
+  <%= render "shared/error_messages", object: @book %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :alias %>
+  <%= f.text_field :alias %>
+
+  <%= f.file_field :book_img %>
+
+  <%= f.label :category %>
+  <%= f.collection_select :category_id, @categories, :id, :name,
+    include_blank: true %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %><br>
+
+  <div class="field">
+    <%= f.label :tags %><br />
+    <%= f.collection_check_boxes :tag_ids, @tags, :id, :name do |b| %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :publish_date %>
+  <%= f.datetime_field :publish_date %>
+
+  <%= f.submit %>
+<% end %>

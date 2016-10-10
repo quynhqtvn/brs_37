@@ -1,0 +1,30 @@
+<div id="content">
+  <h2> <%= t "book.manage" %> </h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t "book.image" %></th>
+        <th><%= t "book.title" %></th>
+        <th><%= t "edit" %></th>
+        <th><%= t "book.delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= link_to image_tag book.book_img.url(:book_index) %></td>
+          <td><%= book.title %></td>
+          <td>
+            <%= link_to t("edit"), edit_admin_book_path(book),
+              class: "edit" %>
+          </td>
+          <td>
+            <%= link_to t("category.delete"), admin_book_path(book),
+              method: :delete, data: {confirm: t("confirm_delete")},
+              class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
