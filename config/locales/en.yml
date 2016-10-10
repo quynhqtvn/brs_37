@@ -70,6 +70,8 @@ en:
     add_book: "Add Book"
     view_book: "View Books"
     manage_users: "Manage Users"
+    manage_tags: "Manage Tags"
+    manage_reviews: "Manage Reviews"
   nav:
     home: "Home"
     about: "About"
@@ -126,3 +128,14 @@ en:
   review_content: "Enter your review here...(max: 50 character)"
   review_title: "Enter your review title here...(min: 50 character)"
   review_error: "Review error, please make review"
+  tag:
+    new: "Create a tag"
+    created_successfull: "Tag created successfull!"
+    manage_tags: "Manage Tags"
+    delete: "Delete"
+    edit_title: "Edit tag"
+    tags: "Tags"
+    updated: "Tag updated!"
+    not_found: "Tag could not be found!"
+    deleted: "Tag deleted!"
+    delete_error: "Can not delete this tag!"

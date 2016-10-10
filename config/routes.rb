@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     root "categories#index", as: "root"
     resources :users, only: [:index, :destroy]
     resources :categories
+    resources :tags
     resources :books do
       resources :reviews, only: [:index, :destroy]
     end
