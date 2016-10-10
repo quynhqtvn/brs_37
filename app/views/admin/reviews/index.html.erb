@@ -1,0 +1,31 @@
+<div id="content">
+  <h2><%= t "review.manage" %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t "review.title" %></th>
+        <th><%= t "review.content" %></th>
+        <th><%= t "review.reviewer" %></th>
+        <th><%= t "review.book" %></th>
+        <th><%= t "review.rate" %></th>
+        <th><%= t "review.delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td><%= review.title %></td>
+          <td><%= review.content %></td>
+          <td><%= review.user.name %></td>
+          <td><%= review.book.title %></td>
+          <td><%= review.rate %></td>
+          <td>
+            <%= link_to t("review.delete"), admin_book_review_path(review.book, review),
+              method: :delete, data: {confirm: t("confirm_delete")},
+              class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
