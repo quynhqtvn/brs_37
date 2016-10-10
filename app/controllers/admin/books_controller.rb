@@ -1,12 +1,11 @@
 class Admin::BooksController < ApplicationController
-  extend DatabaseQuery
   layout "admin"
   before_action :logged_in_user, :verify_admin
   before_action :load_book, except: [:new, :index, :create]
   before_action :load_data, only: [:edit, :new]
 
   def index
-    @books = Book.sort_by_name.paginate page: params[:page],
+    @books = Book.sort_by_title.paginate page: params[:page],
       per_page: Settings.per_page
   end
 

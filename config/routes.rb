@@ -8,9 +8,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "categories#index", as: "root"
-    resources :users, only: :delete
+    resources :users, only: [:index, :destroy]
     resources :categories
-    resources :books
+    resources :books do
+      resources :reviews, only: [:index, :destroy]
+    end
+    resources :reviews, only: :index
   end
 
   resources :users

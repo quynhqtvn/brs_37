@@ -6,4 +6,8 @@ module DatabaseQuery
   def sort_by_name
     order name: :asc
   end
+
+  def sort_by_title
+    order title: :asc
+  end
 end
