@@ -1,0 +1,28 @@
+<div id="content">
+  <h2><%= t "manage_tags" %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t "tags" %></th>
+        <th><%= t "tag.edit" %></th>
+        <th><%= t "tag.delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tags.each do |tag| %>
+        <tr>
+          <td><%= tag.name %></td>
+          <td>
+            <%= link_to t("edit"), edit_admin_tag_path(tag),
+              class: "edit" %>
+          </td>
+          <td>
+            <%= link_to t("tag.delete"), admin_tag_path(tag),
+              method: :delete, data: {confirm: t("confirm_delete")},
+              class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
