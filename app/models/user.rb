@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend DatabaseQuery
   before_save {email.downcase!}
 
   has_many :comments
