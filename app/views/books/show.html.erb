@@ -28,5 +28,12 @@
       </div>
     </div>
   </div>
-  <%= render "reviews/form" %>
+  <div class="container" id="container-fix">
+    <%= render "reviews/rating" %>
+    <%= render "reviews/form" %>
+  </div>
+  <div>
+    <%= render @reviews %>
+    <%= will_paginate @reviews %>
+  </div>
 </div>

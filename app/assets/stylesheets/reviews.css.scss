@@ -7,7 +7,7 @@
 }
 
 #col-sm-9 {
-  margin-top: -115px;
+  margin-top: -100px;
   margin-left: 230px;
 }
 
@@ -65,7 +65,7 @@
 }
 
 #reviews-row {
-  margin-top: 40px;
+  margin-top: -125px;
 }
 
 #post-review-box {
@@ -74,4 +74,42 @@
 
 #new-title {
   width: 628px;
+}
+.rating .star-active:before {
+ content: "\2605";
+ color: yellow;
+ position: absolute;
+}
+.rating {
+  unicode-bidi: bidi-override;
+}
+.rating span {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  font-size: 20px;
+}
+#pull-left {
+  width: 35px;
+  line-height: 1;
+}
+#value-start {
+  height: 9px;
+  margin: 5px 0;
+}
+#pull-left-1 {
+  width: 180px;
+}
+#progress {
+  height: 9px;
+  margin: 8px 0;
+}
+#progress-bar {
+  width: 1000%;
+}
+#pull-right {
+  margin-left: 10px;
+}
+#review-block-title {
+  margin-top: 43px;
 }
