@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
       redirect_to admin_root_path
     end
   end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    if @user.nil?
+      flash[:notice] = t "user_not_found"
+      redirect_to root_path
+    end
+  end
 end

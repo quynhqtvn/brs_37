@@ -1,0 +1,30 @@
+<div id="content">
+  <h2><%= t "user.manage" %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t "user.index" %></th>
+        <th><%= t "user.name" %></th>
+        <th><%= t "user.email" %></th>
+        <th><%= t "user.delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each.with_index do |user, index| %>
+        <tr>
+          <td><% params[:page] ||= "1" %>
+            <%= index_for params[:page], index, Settings.per_page %>
+          </td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <%= link_to t("user.delete"), admin_user_path(user),
+              method: :delete, data: {confirm: t("confirm_delete")},
+              class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+      <%= will_paginate %>
+    </tbody>
+  </table>
+</div>
