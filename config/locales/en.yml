@@ -139,3 +139,6 @@ en:
     not_found: "Tag could not be found!"
     deleted: "Tag deleted!"
     delete_error: "Can not delete this tag!"
+  value_average_rating: "/5"
+  title_average_rating: "Average user rating"
+  title_count_rating: "Rating breakdown"
