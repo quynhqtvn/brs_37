@@ -1,0 +1,31 @@
+<div id="content">
+  <h2><%= t "comment.manage" %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t "comment.index" %></th>
+        <th><%= t "comment.review_id" %></th>
+        <th><%= t "comment.user_name" %></th>
+        <th><%= t "comment.content" %></th>
+        <th><%= t "comment.delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @comments.each.with_index do |comment, index| %>
+        <tr>
+          <td><% params[:page] ||= "1" %>
+            <%= index_for params[:page], index, Settings.per_page %>
+          </td>
+          <td><%= comment.review.id %></td>
+          <td><%= comment.user.name %></td>
+          <td><%= comment.content %></td>
+          <td>
+            <%= link_to t("comment.delete"), admin_comment_path(comment),
+              method: :delete, data: {confirm: t("confirm_delete")},
+              class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -23,6 +23,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def load_review
+    @review = Review.latest.find_by id: params[:id]
+    if @review.nil?
+      flash[:notice] = t "review.not_found"
+      redirect_to admin_root_path
+    end
+  end
+
   def load_user
     @user = User.find_by id: params[:id]
     if @user.nil?
