@@ -9,7 +9,7 @@
     <div class="box-border">
       <p id="tags"><%= t "tags" %>
         <% @tags.each do |tag| %>
-          <%= link_to tag.name, root_path(tag: tag.name) %>
+          <%= link_to tag.name, root_path(tag: tag.name), class: "label label-info", id: "tag-color" %>
         <% end %>
       </p>
     </div>

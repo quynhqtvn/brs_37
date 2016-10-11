@@ -11,13 +11,19 @@
         </div>
         <div class="row">
           <div class="col-md-12" id="post-header-line">
-            <span class="glyphicon glyphicon-book"></span> <%= book.category.name %> |
-            <span class="glyphicon glyphicon-calendar"></span><%= l book.created_at, format: :short %> |
-            <span class="glyphicon glyphicon-comment"></span><%= t "comments" %> |
-            <i class="glyphicon glyphicon-heart"></i><%= t "favorite" %>|
-            <span class="glyphicon glyphicon-tags"></span><%= t "tags" %> :
+            <span class="glyphicon glyphicon-book"></span>
+              <%= book.category.name %> |
+            <span class="glyphicon glyphicon-calendar"></span>
+              <%= l book.created_at,format: :short %> |
+            <span class="glyphicon glyphicon-comment"></span>
+              <%= t "comments" %> |
+            <i class="glyphicon glyphicon-heart"></i>
+              <%= t "favorite" %>|
+            <span class="glyphicon glyphicon-tags"></span>
+              <%= t "tags" %> :
             <% book.tags.each do |tag| %>
-              <%= link_to tag.name, root_path(tag: tag.name) %>
+              <%= link_to tag.name, root_path(tag: tag.name),
+                class: "label label-info", id: "tag-color" %>
             <% end %>
           </div>
         </div>
@@ -30,7 +36,8 @@
               <%= book.description %>
             </p>
             <p>
-              <%= link_to t("readmore"), book_path(book.id) , class: "btn btn-read-more", id: "btn-read-more" %>
+              <%= link_to t("readmore"), book_path(book.id) , class: "btn btn-read-more",
+                id: "btn-read-more" %>
             </p>
           </div>
         </div>
