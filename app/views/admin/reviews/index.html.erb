@@ -8,6 +8,7 @@
         <th><%= t "review.reviewer" %></th>
         <th><%= t "review.book" %></th>
         <th><%= t "review.rate" %></th>
+        <th><%= t "review.comment" %></th>
         <th><%= t "review.delete" %></th>
       </tr>
     </thead>
@@ -19,8 +20,9 @@
           <td><%= review.user.name %></td>
           <td><%= review.book.title %></td>
           <td><%= review.rate %></td>
+          <td><%= review.comments.count %></td>
           <td>
-            <%= link_to t("review.delete"), admin_book_review_path(review.book, review),
+            <%= link_to t("review.delete"), admin_review_path(review),
               method: :delete, data: {confirm: t("confirm_delete")},
               class: "delete" %>
           </td>
