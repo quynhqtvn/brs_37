@@ -158,4 +158,5 @@ en:
     content: "Content"
     delete: "Delete"
     delete_error: "Error when delete this comment!"
+    comment_here: "comment here..."
   search: "Search"

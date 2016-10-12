@@ -1,0 +1,6 @@
+<%= form_for [:book, :review, @comment] do |f| %>
+  <div>
+    <%= f.text_field :content, placeholder: t("comment.comment_here"),
+      id: 'create-comment', class: "form-control" %>
+  </div>
+<% end %>
