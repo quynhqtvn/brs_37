@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: :index
-  before_action :load_user, only: [:show, :edit, :update]
-  before_action :verify_user, only: [:edit, :update, :show]
+  before_action :verify_user, except: [:index, :new, :create]
 
   def index
     @users = User.recent.paginate page: params[:page],
@@ -52,16 +51,7 @@ class UsersController < ApplicationController
   end
 
   def verify_user
-    @user = User.find_by params[:id]
-    if @user.nil?
-      flash[:notice] = t "user_not_found"
-      redirect_to root_path
-    end
-    redirect_to root_path unless @user == current_user
-  end
-
-  def load_user
-    @user = User.find_by params[:id]
+    @user = User.find_by id: params[:id]
     if @user.nil?
       flash[:notice] = t "user_not_found"
       redirect_to root_path

@@ -1,0 +1,22 @@
+<div id="posts_wrapper" class="skinny_wrapper">
+  <% provide(:title, @title) %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1><%= @user.name || @user.email %></h1>
+        <span><%= link_to t("user.view_profile"), @user %></span><br><br>
+      </section>
+      <section class="stats">
+        <%= render "shared/stats" %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3><%= @title %></h3>
+      <% if @users.any? %>
+        <ul class="users follow">
+          <%= render @users %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
