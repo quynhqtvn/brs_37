@@ -3,7 +3,9 @@ class StaticPagesController < ApplicationController
   before_action :load_tags
 
   def index
-    case
+    case params[:id]
+    when params[:search].present?
+      @books = Book.search params[:search]
     when params[:tag].present?
       @tag = Tag.find_by name: params[:tag]
       handle_object_nil @tag
