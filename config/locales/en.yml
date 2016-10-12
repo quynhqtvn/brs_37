@@ -120,6 +120,7 @@ en:
     delete_error: "Deleting error!"
     not_found: "This review could not be found!"
     delete_error: "Error when delete this book!"
+    edit_review: "Edit Review"
   tag_nil: "Tag counldn't be found"
   cancle: "Cancle"
   add_review: "Add Review"

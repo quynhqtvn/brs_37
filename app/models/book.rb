@@ -3,7 +3,7 @@ class Book < ApplicationRecord
 
   belongs_to :category
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :book_users
   has_many :users, through: :book_users
   has_many :book_tags, dependent: :destroy

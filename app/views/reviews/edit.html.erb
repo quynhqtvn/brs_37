@@ -1,0 +1,21 @@
+<h1><%= t "review.edit_review" %></h1>
+
+<%= form_for [@book, @review] do |f| %>
+  <%= f.text_field :title, class: "form-control animated",
+    cols: Settings.cols, id: "new-title", placeholder:
+    t("review_title"), rows: Settings.rows %>
+  <%= f.text_area :content, class: "form-control animated",
+    cols: Settings.cols, id: "new-review",
+    placeholder: t("review_content"), rows: Settings.rows %>
+  <span class="rating">
+    <% Settings.reviews.loop_rating.each do |i| %>
+      <%= f.radio_button :rate, "#{i}"  %> <%= f.label :rate.to_s + "_#{i}"%>
+    <% end %>
+  </span>
+  <div class="text-right">
+    <p class="btn btn-danger btn-sm" id="close-review-box" >
+      <span class="glyphicon glyphicon-remove"></span><%= t "cancle" %>
+    </p>
+    <%= f.submit t("add_review"), class: "btn btn-success btn-lg" %>
+  </div>
+<% end %>

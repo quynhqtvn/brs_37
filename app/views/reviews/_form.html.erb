@@ -9,16 +9,17 @@
         </div>
         <div class="row" id="post-review-box">
           <div class="col-md-12">
-            <%= form_for [@book, @build_review] do |f| %>
-              <%= f.text_field :title, class: "form-control animated",
+            <%= form_for [@book, @build_review], remote: true do |f| %>
+              <%= f.text_field :title, class: "form-control animated reset-input",
                 cols: Settings.reviews.cols, id: "new-title", placeholder:
                 t("review_title"), rows: Settings.reviews.rows %>
-              <%= f.text_area :content, class: "form-control animated",
+              <%= f.text_area :content, class: "form-control animated reset-input",
                 cols: Settings.reviews.cols, id: "new-review",
                 placeholder: t("review_content"),rows: Settings.reviews.rows %>
               <span class="rating">
                 <% Settings.reviews.loop_rating.each do |i| %>
-                  <%= f.radio_button :rate, "#{i}"  %> <%= f.label :rate.to_s + "_#{i}"%>
+                  <%= f.radio_button :rate, "#{i}", class: "reset-input"  %>
+                  <%= f.label :rate.to_s + "_#{i}"%>
                 <% end %>
               </span>
               <div class="text-right">

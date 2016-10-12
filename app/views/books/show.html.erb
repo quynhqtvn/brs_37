@@ -31,9 +31,12 @@
   <div class="container" id="container-fix">
     <%= render "reviews/rating" %>
     <%= render "reviews/form" %>
-  </div>
-  <div>
-    <%= render @reviews %>
-    <%= will_paginate @reviews %>
+    <div class = "row">
+      <div class="col-md-6 mess-area-add"></div>
+    </div>
+    <div class= "list-review">
+      <%= render @reviews %>
+      <%= will_paginate @reviews %>
+    </div>
   </div>
 </div>

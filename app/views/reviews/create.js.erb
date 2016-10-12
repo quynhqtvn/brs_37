@@ -1,0 +1,7 @@
+<% if @review.errors.any? %>
+  notify = $('.mess-area-add');
+  notify.html('<%= j render "shared/error_messages", object: @review %>');
+<% else %>
+  $('.list-review').prepend('<%= j render "reviews/show" %>');
+  $('.reset-input').val('');
+<% end %>
