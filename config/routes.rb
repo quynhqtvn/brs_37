@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     resources :requests, except: :new
   end
 
-  resources :users
+  resources :users do
+    resources :following, only: [:index]
+    resources :followers, only: [:index]
+  end
+  resources :relationships, only: [:create, :destroy]
   resources :books, only: :show do
     resources :reviews, except: [:show, :new] do
       resources :comments

@@ -1,4 +1,10 @@
 <div class="container" id="container-fix">
   <p><%= @user.name %></p>
   <p><%= @user.email %></p><br>
+  <section class="stats">
+    <%= render "shared/stats" %>
+  </section>
+  <div class="col-md-8">
+    <%= render "follow_form" if logged_in? %>
+  </div>
 </div>

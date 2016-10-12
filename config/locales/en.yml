@@ -150,6 +150,11 @@ en:
     delete: "Delete"
     new: "Add a book"
     delete_error: "Error when delete this user!"
+    following: "Following"
+    followers: "Followers"
+    follow: "Follow"
+    unfollow: "Unfollow"
+    view_profile: "View profile"
   comment:
     index: "Index"
     deleted: "Comment deleted!"
@@ -175,3 +180,5 @@ en:
     update_error: "Request updating error!"
     aprove: "Aprove"
     waiting: "Waiting"
+  following: "following"
+  followers: "followers"
