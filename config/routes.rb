@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :books
     resources :reviews, only: [:index, :destroy]
     resources :comments, only: [:index, :destroy]
+    resources :requests, except: :new
   end
 
   resources :users
