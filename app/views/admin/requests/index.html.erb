@@ -1,0 +1,44 @@
+<div id="content">
+  <h2><%= t "request.manage" %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t "request.index" %></th>
+        <th><%= t "request.user_name" %></th>
+        <th><%= t "request.title" %></th>
+        <th><%= t "request.content" %></th>
+        <th><%= t "request.status" %></th>
+        <th><%= t "request.edit" %></th>
+        <th><%= t "request.delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @requests.each.with_index do |request, index| %>
+        <tr>
+          <td><% params[:page] ||= "1" %>
+            <%= index_for params[:page], index, Settings.per_page %>
+          </td>
+          <td><%= request.name %></td>
+          <td><%= request.title %></td>
+          <td><%= request.content %></td>
+          <td>
+            <% if request.status %>
+              <%= t "request.aprove" %>
+            <% else %>
+              <%= t "request.waiting" %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to t("edit"), edit_admin_request_path(request),
+              class: "edit" %>
+          </td>
+          <td>
+            <%= link_to t("request.delete"), admin_request_path(request),
+              method: :delete, data: {confirm: t("confirm_delete")},
+              class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

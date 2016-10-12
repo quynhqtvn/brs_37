@@ -1,0 +1,11 @@
+<div id="content">
+  <h2><%= t "request.edit_title" %></h2>
+  <%= form_for [:admin, @request] do |f| %>
+    <%= render "shared/error_messages", object: @request %>
+    <div class="field">
+      <%= f.label :status %>
+      <%= f.select :status, [[t("request.aprove"), true], [t("request.waiting"), false]] %>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
