@@ -17,4 +17,5 @@ class Book < ApplicationRecord
   validates :category, presence: true
   validates :author, presence: true
 
+  scope :search, -> search {where "title LIKE ?", "#{search}%"}
 end
