@@ -46,6 +46,7 @@
             <div class = "row">
               <div class="col-md-6 mess-area-add"></div>
             </div>
+            <% end %>
             <div class="list-comment-<%= review.id %>">
               <p>
                 <%= review.comments.size %>
@@ -69,11 +70,10 @@
                   </div>
                 <% end %>
               <% end %>
-              <div>
-                <%= render :partial => "comments/form", locals:{review: review} %>
-              </div>
             </div>
-          <% end %>
+          <div>
+            <%= render :partial => "comments/form", locals:{review: review} %>
+          </div>
         </div>
         <hr/>
       </div>

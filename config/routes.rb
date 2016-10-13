@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :destroy]
     resources :requests, except: :new
   end
-
+  resources :activities, only: [:create, :destroy]
   resources :users do
     resources :following, only: [:index]
     resources :followers, only: [:index]

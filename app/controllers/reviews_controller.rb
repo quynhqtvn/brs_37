@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   def create
     @review = @book.reviews.new review_params
     @review.save
+    add_activity "review", @book.id
     respond_to do |format|
       format.js
     end
@@ -15,6 +16,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
+    remove_activity "review", @book.id
     respond_to do |format|
       format.js
     end
