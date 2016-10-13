@@ -16,7 +16,7 @@ class Admin::TagsController < ApplicationController
     @tag = Tag.new tag_params
     if @tag.save
       flash[:success] = t "tag.created_successfull"
-      redirect_to admin_root_path
+      redirect_to admin_tags_path
     else
       render :new
     end

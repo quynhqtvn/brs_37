@@ -20,9 +20,9 @@ class Activity < ApplicationRecord
     if follow?
       User.find_by id: target_id
     elsif review?
-      Review.find_by id: target_id
+      Book.find_by id: target_id
     elsif comment?
-      Comment.find_by id: target_id
+      Book.find_by id: target_id
     end
   end
 end

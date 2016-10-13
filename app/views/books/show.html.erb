@@ -6,7 +6,7 @@
     <strong><%= t "by" %><%= @book.author %></strong>
   </h3>
   <div class="col-md-4" id="col-md-4">
-    <img src="http://4.bp.blogspot.com/-_lqoNpVXeU4/UkxQ7N-QW8I/AAAAAAAACTw/pni-TZyp17o/s1600/cool+share+button+effects+styles.png" alt="" class="img-responsive" id="img-book">
+    <%= image_tag @book.book_img.url(:book_show2), class: "img-responsive"%>
   </div>
   <div class="col-md-8" id = "col-md-8">
     <p>

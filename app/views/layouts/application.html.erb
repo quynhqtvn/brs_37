@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" %>
   </head>
 
   <body>
@@ -17,4 +19,5 @@
       <%= debug(params) if Rails.env.development? %>
     </div>
     <%=render "layouts/footer" %>
+  </body>
 </html>

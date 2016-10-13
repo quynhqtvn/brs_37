@@ -31,24 +31,27 @@
       <h2>Activities</h2>
       <ul class="activities">
         <% @activities.each do |activity| %>
-          <li id="activity-<%= activity.id %>">
-            <span class="activity">
-              <%= link_to activity.user.name,
-                user_path(activity.user_id) %>
-              <%= activity.timeline %>
-              <% if activity.follow? %>
-                <%= link_to activity.target.name, user_path(activity.target) %>
-              <% elsif activity.review? %>
-                <%= link_to activity.target.title, book_path(activity.target) %>
-              <% elsif activity.comment? %>
-                <%= link_to activity.target.title, book_path(activity.target) %>
-              <% end %>
-            </span>
-            <span class="timestamp">
-              <%= time_ago_in_words activity.created_at %>
-            </span>
-          </li>
+          <div class="activity">
+            <li id="activity-<%= activity.id %>">
+              <span class="activity">
+                <%= link_to activity.user.name,
+                  user_path(activity.user_id) %>
+                <%= activity.timeline %>
+                <% if activity.follow? %>
+                  <%= link_to activity.target.name, user_path(activity.target) %>
+                <% elsif activity.review? %>
+                  <%= link_to activity.target.title, book_path(activity.target) %>
+                <% elsif activity.comment? %>
+                  <%= link_to activity.target.title, book_path(activity.target) %>
+                <% end %>
+              </span>
+              <span class="timestamp">
+                <%= time_ago_in_words activity.created_at %>
+              </span>
+            </li>
+          </div>
         <% end %>
+        <%= will_paginate @activities %>
       </ul>
     </div>
   <% end %>

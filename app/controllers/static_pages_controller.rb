@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   def index
     if logged_in?
       @activities = Activity.all.order(created_at: :desc).
-        paginate page: params[:page]
+        paginate page: params[:page], per_page: Settings.per_page
     end
 
     case
