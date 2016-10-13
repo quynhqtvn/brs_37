@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @book = @review.book
     @comment = @review.comments.new review_params
     if @comment.save
+      add_activity "comment", @comment.review.book_id
       redirect_to book_path @book
     else
       flash[:danger] = t "create_comment"
@@ -29,6 +30,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
+    remove_activity "comment", @comment.review.book_id
     redirect_to book_path @book
   end
 

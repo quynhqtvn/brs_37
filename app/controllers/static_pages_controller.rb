@@ -3,6 +3,11 @@ class StaticPagesController < ApplicationController
   before_action :load_tags
 
   def index
+    if logged_in?
+      @activities = Activity.all.order(created_at: :desc).
+        paginate page: params[:page]
+    end
+
     case
     when params[:search].present?
       @books = Book.search params[:search]

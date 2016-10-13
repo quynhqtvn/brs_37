@@ -1,10 +1,32 @@
 <div class="container" id="container-fix">
-  <p><%= @user.name %></p>
-  <p><%= @user.email %></p><br>
+  <h1><%= @user.name %></h1>
   <section class="stats">
     <%= render "shared/stats" %>
   </section>
-  <div class="col-md-8">
+
+  <div class="col-md-6">
     <%= render "follow_form" if logged_in? %>
+  </div>
+  <div class="col-md-6">
+  <ul class="activities">
+     <% @activities.each do |activity| %>
+       <li id="activity-<%= activity.id %>">
+         <span class="activity">
+           <%= link_to @user.name, user_path(@user) %>
+           <%= activity.timeline %>
+           <% if activity.follow? %>
+             <%= link_to activity.target.name, user_path(activity.target) %>
+           <% elsif activity.review? %>
+             <%= link_to activity.target.title, book_path(activity.target) %>
+           <% elsif activity.comment? %>
+             <%= link_to activity.target.title, book_path(activity.target) %>
+           <% end %>
+         </span>
+         <span class="timestamp">
+           <%= time_ago_in_words activity.created_at %>
+         </span>
+       </li>
+     <% end %>
+   </ul>
   </div>
 </div>

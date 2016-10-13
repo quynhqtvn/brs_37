@@ -1,11 +1,10 @@
-<div class="container" id="container-fix">
-  <div class="row">
-    <div class="col-md-9">
-      <h1><%= t "title" %></h1>
-      <hr id="hr1">
-      <hr id="hr2">
-      <h4><%= t "title_book" %></h4>
-      <p><%= t "content" %></p>
+<div class="row">
+  <div class="col-md-8">
+    <h1><%= t "title" %></h1>
+    <hr id="hr1">
+    <hr id="hr2">
+    <h4><%= t "title_book" %></h4>
+    <p><%= t "content" %></p>
     <div class="box-border">
       <p id="tags"><%= t "tags" %>
         <% @tags.each do |tag| %>
@@ -26,6 +25,32 @@
       </ul>
     </div>
     <%= render "books/book" %>
-    </div>
   </div>
+  <% if logged_in? %>
+    <div class="col-md-4">
+      <h2><%= t "activities" %></h2>
+      <ul class="activities">
+        <% @activities.each do |activity| %>
+          <li id="activity-<%= activity.id %>">
+            <span class="activity">
+              <%= link_to activity.user.name,
+                user_path(activity.user_id) %>
+              <%= activity.timeline %>
+              <% if activity.follow? %>
+                <%= link_to activity.target.name, user_path(activity.target) %>
+              <% elsif activity.review? %>
+                <%= link_to activity.target.title, book_path(activity.target) %>
+              <% elsif activity.comment? %>
+                <%= link_to activity.target.title, book_path(activity.target) %>
+              <% end %>
+            </span>
+            <span class="timestamp">
+              <%= time_ago_in_words activity.created_at %>
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
+
