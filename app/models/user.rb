@@ -2,6 +2,7 @@ class User < ApplicationRecord
   extend DatabaseQuery
   before_save {email.downcase!}
 
+  has_many :activities, dependent: :destroy
   has_many :comments
   has_many :requests
   has_many :book_users
@@ -66,5 +67,10 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include?(other_user)
+  end
+
+  def activity? action_type, book_id
+    activities.find_by action_type: Activity.action_types[action_type],
+     target_id: book_id.present?
   end
 end

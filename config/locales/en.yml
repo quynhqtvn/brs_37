@@ -182,3 +182,11 @@ en:
     waiting: "Waiting"
   following: "following"
   followers: "followers"
+activity:
+  created: "Activity created"
+  create_error: "Creating error"
+  deleted: "Activity deleted"
+  delete_error: "Deleting error"
+  follow: "followed"
+  comment: "commented"
+  review: "reviewed"
